@@ -89,3 +89,132 @@ flag ccode: 8748wf8j
 >> Hide detailed SQL error messages
 
 >> Use secure password hashing (bcrypt/Argon2)
+
+
+#🌐 Challenge 2: Web Server Vulnerabilities
+**Vulnerability Identified**
+
+Directory listing enabled on Apache web server
+
+**Reconnaissance Command**
+>> nmap --script http-enum -p 80 10.5.5.12
+
+<img width="740" height="295" alt="chal 2 2  nmap scan for files" src="https://github.com/user-attachments/assets/69586995-638a-4639-ba57-f11c3377dd70" />
+
+>> Checking the /config/ filepath
+
+ <img width="631" height="377" alt="chal2 2  config file" src="https://github.com/user-attachments/assets/233aef9b-2845-4db1-9cf8-f1ffeed32927" />
+ 
+<img width="642" height="231" alt="chal2 3  flag found" src="https://github.com/user-attachments/assets/b0d3b202-be18-45d8-b570-c3ce065955ab" />
+
+
+**Accessible Directories**
+
+/config/
+
+/docs/
+
+/external/
+
+**Flag Discovery**
+
+Location: /config/db_form.html
+
+Filename: db_form.html
+
+flag code: aWe-4975
+
+**Directory Listing Remediation**
+
+>> Disable directory indexing (Options -Indexes)
+
+>> Add default index files (index.html)
+
+
+$ 🗄️ Challenge 3: SMB Enumeration
+**SMB Host Identified**
+
+IP Address: 10.5.5.14
+Ports: 139, 445 (Samba)
+
+**Enumeration Commands**
+>> smbclient -L //10.5.5.14 -N
+
+<img width="661" height="356" alt="chal3 4 files found" src="https://github.com/user-attachments/assets/2587edb3-6fb5-49c3-a037-97b363cbb1b5" />
+
+>> nmap --script smb-enum-shares.nse -p 445 10.5.5.14
+
+<img width="460" height="185" alt="chal3 3 network scan" src="https://github.com/user-attachments/assets/db54153c-85e5-4c46-baef-637b9d69cb3c" />
+
+>> searching through OTHER directory
+
+<img width="623" height="79" alt="chal3 6 file found" src="https://github.com/user-attachments/assets/fda4b277-ef7c-4202-a249-c2295fd08895" /> 
+
+>> found another file
+
+ <img width="623" height="79" alt="chal3 6 file found" src="https://github.com/user-attachments/assets/fa6fd656-d6d6-40b2-8123-04508e28398c" />
+
+<img width="861" height="55" alt="chal3 7  flag copied" src="https://github.com/user-attachments/assets/df875fb9-3726-4cc2-b7c8-3e95c6bdcde4" />
+
+Flag Found
+
+<img width="470" height="100" alt="chal3 8  flag opened" src="https://github.com/user-attachments/assets/5c9fa2c1-cfbc-4c76-b304-8ad44749e5a7" />
+
+
+**Shares Found**
+
+>> homes
+
+>> workfiles
+
+>> print$
+
+>> IPC$
+
+
+**Anonymous Access Confirmed**
+
+>> workfiles
+
+>> print$
+
+>> IPC$
+
+**Challenge 3 Flag**
+
+Share: print$
+
+Filename: sxij42.txt
+
+Flag Code: NWs39691
+
+**SMB Remediation**
+
+>> Disable anonymous/guest access
+
+>> Restrict SMB using firewalls and ACLs
+
+
+# 📡 Challenge 4: PCAP Analysis
+
+**File Analyzed**
+
+SA.pcap
+
+**Tool**
+
+Wireshark
+
+**Findings**
+
+>> Target IP Address: (from your analysis)
+
+>> Directories Observed: (from HTTP traffic)
+
+>> Flag URL: (full URL)
+
+**PCAP Remediation**
+
+>> Use HTTPS instead of HTTP
+
+>> Encrypt sensitive network traffic
