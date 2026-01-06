@@ -203,7 +203,13 @@ SA.pcap
 
 **Tool**
 
-Wireshark
+>> Wireshark
+
+>> Kali Linux
+
+>> TCP/IP knowledge
+
+>> HTTP protocol analysis
 
 **Findings**
 
@@ -220,9 +226,25 @@ Wireshark
 
 <img width="815" height="603" alt="chal4 1 flag found" src="https://github.com/user-attachments/assets/717b8e67-1549-487e-962d-dc11a5b831bb" />
 
+>> Flag Code: 21z-1478K
 
 **PCAP Remediation**
 
 >> Use HTTPS instead of HTTP
 
 >> Encrypt sensitive network traffic
+
+
+# 🧠 Key Takeaways
+
+>> Misconfigurations lead to serious data exposure
+
+>> Anonymous access is a critical security risk
+
+>> Encryption is essential for protecting data in transit
+
+>> Defense-in-depth is crucial for enterprise security
+
+#⚠️ Disclaimer
+
+All activities were performed in an authorized lab environment for educational purposes only.
