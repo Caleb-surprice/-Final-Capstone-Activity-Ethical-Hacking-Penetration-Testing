@@ -131,7 +131,7 @@ flag code: aWe-4975
 >> Add default index files (index.html)
 
 
-$ 🗄️ Challenge 3: SMB Enumeration
+# 🗄️ Challenge 3: SMB Enumeration
 **SMB Host Identified**
 
 IP Address: 10.5.5.14
@@ -207,11 +207,19 @@ Wireshark
 
 **Findings**
 
->> Target IP Address: (from your analysis)
+>> Target IP Address: (10.5.5.11)
 
->> Directories Observed: (from HTTP traffic)
+>> Directories Observed:
+ /test/ , /data/ , /includes/ , /passwords/, /styles/,  /javascript/ , /webservices/
 
->> Flag URL: (full URL)
+<img width="1355" height="414" alt="chal4 2 packet analysis" src="https://github.com/user-attachments/assets/0475cebc-1f5f-446a-9e64-cb413ab3fea0" />
+
+>> Flag URL: (http://10.5.5.11/data/user_accounts.xml)
+
+<img width="820" height="382" alt="chal4 3 file found" src="https://github.com/user-attachments/assets/040d6f12-b983-4e64-889c-a31e842a2ea2" />
+
+<img width="815" height="603" alt="chal4 1 flag found" src="https://github.com/user-attachments/assets/717b8e67-1549-487e-962d-dc11a5b831bb" />
+
 
 **PCAP Remediation**
 
